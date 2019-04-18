@@ -56,7 +56,6 @@ if nt_enabled:
     sd.putValue('pi_connected', 'CONNECTED')
 
 
-
 class VideoGet(Thread):
 
     def __init__(self):
@@ -172,8 +171,8 @@ def processvision():
                         del avg_pct[0]
                     print((sum(avg_pct)) / len(avg_pct))
                     print((sum(avg_mc_1)) / len(avg_mc_1))
-                    #print((sum(avg(mc_2)) / len(avg_mc_2))
-                    #print(((mc_largest_1[1] + mc_largest_2[1]) / (width*height)))
+                    print((sum(avg_mc_2)) / len(avg_mc_2))
+                    print(((mc_largest_1[1] + mc_largest_2[1]) / (width*height)))
                     if True: #(sum(avg_pct) / len(avg_pct)) > 0:
                         if nt_enabled:
                             if len(mc) == 0:
