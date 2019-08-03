@@ -18,5 +18,7 @@
 #fi
 
 bash /home/pi/launch.sh &
+sleep 5
+python3 /home/pi/threaded_vision_with_shutdown5.py
 
 exit 0

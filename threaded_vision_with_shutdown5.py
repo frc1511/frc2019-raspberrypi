@@ -5,6 +5,7 @@ import subprocess
 import cv2
 import datetime
 import time
+import os
 
 nt_enabled = True
 is_competition = False
@@ -24,8 +25,12 @@ height = 480
 # sudo gst-launch-1.0 -v udpsrc port=5800 caps="application/x-rtp,media=(string)video,clock-rate=(int)90000,encoding-name=(string)H264,payload=(int)96" ! rtpjitterbuffer latency=1 ! rtph264depay ! decodebin ! videoconvert ! ximagesink
 
 driverstation ='10.15.11.5'
-teamnum = 1511
-ip = 'roborio-%s-frc.local' % teamnum
+teamnum = os.environ.get('TEAMNUM', 0000)
+if teannum == 0000: #no team number is set in system
+    sys.stderr.write('ERR: No team number set in "TEAMNUM" var')
+    sys.exit(1)
+else:
+    ip = 'roborio-%s-frc.local' % teamnum
 connection_cond = Condition()
 connection_notified = [False]
 
